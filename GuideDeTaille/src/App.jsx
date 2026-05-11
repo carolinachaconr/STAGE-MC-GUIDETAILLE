@@ -1,9 +1,12 @@
 import { useState } from "react";
 import Modal from "./components/Modal";
 import SizeForm from "./components/SizeForm";
+import StartForm from "./components/StartForm";
 
 export default function App() {
   const [open, setOpen] = useState(false);
+  // <onClick={() => setOpen(true)}>SizeForm</onClick>
+
 
   return (
     <div className="p-10">
@@ -20,7 +23,9 @@ export default function App() {
         onClose={() => setOpen(false)}
         title="Guide des tailles"
       >
-        <SizeForm />
+        <StartForm />
+        {/* <SizeForm /> */}
+        
       </Modal>
 
     </div>
