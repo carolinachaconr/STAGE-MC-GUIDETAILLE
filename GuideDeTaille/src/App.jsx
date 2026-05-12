@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "./components/Modal";
 import SizeForm from "./components/SizeForm";
 import StartForm from "./components/StartForm";
+import GuideDeTailles from "./pages/GuidedeTailles";
 
 export default function App() {
   const [open, setOpen] = useState(false);
@@ -10,10 +11,11 @@ export default function App() {
 
   return (
     <div className="p-10">
+      <img className="h-96 flex justify-center pb-10" src="src/assets/IMG.PNG" alt="IMG" />
 
       <button
         onClick={() => setOpen(true)}
-        className="bg-blue-500 text-white px-4 py-2 rounded-xl"
+        className="bg-[#d71e3e] text-white px-4 py-2 rounded-xl"
       >
         Ouvrir guide des tailles
       </button>
@@ -27,6 +29,7 @@ export default function App() {
         {/* <SizeForm /> */}
         
       </Modal>
+      <GuideDeTailles />
 
     </div>
   );

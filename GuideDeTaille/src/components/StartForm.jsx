@@ -17,7 +17,7 @@ export default function StartForm() {
             <p>Avez-vous besoin d'aide pour choisir votre taille ?</p>
             <button 
             onClick={() => setStartQuiz(true)}
-            className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
+            className="w-full bg-[#d71e3e] text-white py-2 rounded-lg hover:bg-[#b01a30]">
               Oui, je veux trouver ma taille
             </button>
           </>

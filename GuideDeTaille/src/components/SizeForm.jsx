@@ -35,7 +35,7 @@ export default function SizeForm() {
           value={height}
           onChange={(e)=> setHeight(Number(e.target.value))}
           placeholder="Ex: 170"
-          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#d71e3e]"
         />
       </div>
 
@@ -48,7 +48,7 @@ export default function SizeForm() {
           value={weight}
           onChange={(e) => setWeight(Number(e.target.value))}
           placeholder="Ex: 65"
-          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#d71e3e]"
         />
       </div>
 
@@ -61,7 +61,7 @@ export default function SizeForm() {
           value={age}
           onChange={(e) => setAge(Number(e.target.value))}
           placeholder="Ex: 25"
-          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#d71e3e]"
         />
       </div>
 
@@ -70,7 +70,7 @@ export default function SizeForm() {
       <button
         type="button"
         onClick={calculateSize}
-        className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
+        className="w-full bg-[#d71e3e] text-white py-2 rounded-lg hover:bg-[#b01a30]"
       >
         Calculer ma taille
       </button>
