@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <div className="p-10">
-      <img className="h-96 flex justify-center pb-10" src="src/assets/IMG.PNG" alt="IMG" />
+    
 
       <button
         onClick={() => setOpen(true)}
@@ -29,7 +29,7 @@ export default function App() {
         {/* <SizeForm /> */}
         
       </Modal>
-      <GuideDeTailles />
+     
 
     </div>
   );
