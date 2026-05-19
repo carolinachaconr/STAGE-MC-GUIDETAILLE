@@ -8,24 +8,42 @@ export default function GuideDeTailles() {
 
   return (
     <div className="p-10">
+      <h1>Guide des tailles</h1>
       <nav className="bg-gray-200 p-4 rounded-lg mb-6">
         <ul className="flex flex-row gap-3">
 
-          <li>
-            <button onClick={() => setSection("hauts")}>
-              Taille hauts
-            </button>
+          <li  >
+            {section === "hauts" ? (
+              <button className="text-red-500">
+                Taille hauts
+              </button>
+            ) : (
+              <button  onClick={() => setSection("hauts")}>
+                Taille hauts
+              </button>
+            )}
           </li>
 
           <li>
-            <button onClick={() => setSection("pantalons")}>
-              Taille pantalons
-            </button>
+           {section === "pantalons" ? (
+              <button className="text-red-500">
+                Taille pantalons
+              </button>
+            ) : (
+              <button onClick={() => setSection("pantalons")}>
+                Taille pantalons
+              </button>
+            )}
           </li>
            <li>
+            {section === "chaussures" ? (
+              <button className="text-red-500">
+                Taille chaussures
+              </button>
+            ) : (
             <button onClick={() => setSection("chaussures")}>
               Taille chaussures
-            </button>
+            </button>)}
           </li>
 
         </ul>
@@ -33,7 +51,7 @@ export default function GuideDeTailles() {
 
       {section === "hauts" && <TailleHauts />}
 
-      {section === "pantalons" && <TaillePantalons />}
+      {section  === "pantalons" && <TaillePantalons />}
       {section === "chaussures" && <TailleChaussures />}
     </div>
   );

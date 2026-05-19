@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-p{
-    padding-bottom: 20px;
+@layer base {
+    p {
+        @apply pb-5;
+    }
+    h1 {
+        @apply text-[2.5rem] font-bold mb-5 text-[#d71e3e]
+        text-center;
+    }
 }
