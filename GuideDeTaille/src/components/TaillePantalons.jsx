@@ -45,41 +45,35 @@ export default function TaillePantalons() {
       hips: '101,5cm (40")',
     },
     {
-      // je suis ici
+     
       label: "",
       num: "11",
-      tights: '62,5cm (24,5")',
+      tights: '61cm (24")',
       waist: '82,5cm (32,5")',
       hips: '105cm (41,5")',
     },
     {
       label: "L",
       num: "13",
-      tights: '104cm (41")',
+      tights: '63,5cm (25")',
       waist: '86cm (34")',
       hips: '109cm (43")',
     },
     {
       label: "",
       num: "15",
-      tights: '108cm (42,5")',
+      tights: '66cm (26")',
       waist: '90cm (35,5")',
       hips: '113cm (44,5")',
     },
     {
       label: "XL",
       num: "17",
-      tights: '112cm (44")',
+      tights: '68,5cm (27")',
       waist: '94cm (37")',
       hips: '117cm (46")',
     },
-    {
-      label: "XXL",
-      num: "-",
-      tights: '119cm (47")',
-      waist: '101,5cm (40")',
-      hips: '124,5cm (49")',
-    },
+   
   ];
 
   return (
@@ -132,7 +126,7 @@ export default function TaillePantalons() {
           </tbody>
         </table>
       </div>
-
+<img className="pt-20" src="src/assets/pants.jpg" alt="pantalons" />
       <p className="mt-4 text-sm text-gray-500 italic">
         * Les mesures indiquées correspondent aux dimensions du corps.
       </p>

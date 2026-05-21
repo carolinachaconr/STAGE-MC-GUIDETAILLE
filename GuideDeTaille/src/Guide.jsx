@@ -8,8 +8,8 @@ export default function App() {
 
 
   return (
-    <div className="p-10">
-      <img className="h-96 flex justify-center pb-10" src="src/assets/IMG.PNG" alt="IMG" />
+    <div className="p-2">
+      {/* <img className="h-96 flex justify-center pb-10" src="src/assets/IMG.PNG" alt="IMG" /> */}
 
      
       <GuideDeTailles />

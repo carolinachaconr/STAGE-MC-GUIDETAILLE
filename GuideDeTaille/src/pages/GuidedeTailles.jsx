@@ -4,7 +4,7 @@ import TaillePantalons from "../components/TaillePantalons";
 import TailleChaussures from "../components/TailleChaussures";
 
 export default function GuideDeTailles() {
-  const [section, setSection] = useState("");
+  const [section, setSection] = useState("hauts");
 
   return (
     <div className="p-10">
