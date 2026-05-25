@@ -24,6 +24,8 @@ export default function Modal({ isOpen, onClose, title, children }) {
         {/* 👇 ICI le formulaire apparaît */}
         {children}
 
+       
+
       </div>
     </div>
   );
