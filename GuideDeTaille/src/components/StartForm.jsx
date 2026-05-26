@@ -13,8 +13,8 @@ export default function StartForm() {
       <div>
         {!startQuiz ? (
           <>
-            <h1 className="text-2xl font-bold mb-4">Bienvenue dans le guide de taille</h1>
-            <p className="pb-30">Avez-vous besoin d'aide pour choisir votre taille ?</p>
+            <h1 className="text-2xl font-bold mb-4 text-center">Guide des tailles</h1>
+            <p className="pb-30 text-center">Avez-vous besoin d'aide pour choisir votre taille ?</p>
             <button 
             onClick={() => setStartQuiz(true)}
             className="w-full bg-[#d71e3e] text-white py-2 rounded-lg hover:bg-[#b01a30]">

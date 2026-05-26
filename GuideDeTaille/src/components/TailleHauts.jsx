@@ -25,7 +25,7 @@ export default function TailleHauts() {
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6 text-center">Guide des tailles - Hauts</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center">Hauts</h1>
      
       
       <div className="overflow-x-auto shadow-md rounded-lg">

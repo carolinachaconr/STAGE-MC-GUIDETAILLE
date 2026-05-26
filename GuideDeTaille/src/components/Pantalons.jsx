@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 
 export default function Pantalons() {
-  const[thigh, setThigh] = useState("");
-  const[height, setHeight] = useState("");
+  const [thigh, setThigh] = useState("");
+  const [height, setHeight] = useState("");
   const [waist, setWaist] = useState("");
   const [hips, setHips] = useState("");
   const [size, setSize] = useState("");
@@ -20,9 +19,8 @@ export default function Pantalons() {
     setSizeNumber("");
     setHeight("");
     setThigh("");
-    
 
-    if (waist==="" || hips==="" || height==="" ) {
+    if (waist === "" || hips === "" || height === "") {
       setAlerte("Veuillez remplir tous les champs");
       return;
     }
@@ -33,12 +31,11 @@ export default function Pantalons() {
     const t = Number(thigh);
 
     let result = "";
-  
 
-  //  petite ou standard
-    if(ht<165) {
+    //  petite ou standard
+    if (ht < 165) {
       length = "Petite";
-    } else if (ht>=165 ) {
+    } else if (ht >= 165) {
       length = "Standard";
     }
     // *
@@ -61,16 +58,13 @@ export default function Pantalons() {
     else if (w <= 31 && h <= 40) {
       result = "M";
       setSizeNumber("9");
-    }
-    else if (w <= 32.5 && h <= 41.5) {
+    } else if (w <= 32.5 && h <= 41.5) {
       result = "M";
       setSizeNumber("11");
-    }
-    else if (w <= 34 && h <= 43) {
+    } else if (w <= 34 && h <= 43) {
       result = "L";
       setSizeNumber("13");
-    }
-      else if (w <= 35.5 && h <= 44.5) {
+    } else if (w <= 35.5 && h <= 44.5) {
       result = "L";
       setSizeNumber("15");
     }
@@ -78,15 +72,13 @@ export default function Pantalons() {
     else if (w <= 37 && h <= 46) {
       result = "XL";
       setSizeNumber(17);
-    }
-   else {
+    } else {
       setError("Aucune taille trouvée");
       return;
     }
 
     setSize(result);
-   
-  
+
     if (w % 1 > 0 || h % 1 > 0) {
       setNote("Taille ajustée recommandée selon vos mensurations.");
     } else {
@@ -95,73 +87,70 @@ export default function Pantalons() {
   };
 
   return (
-   <div>
-   
-     
-
-    <form id="pantalons" className="space-y-5">
-
-      <div>
-        <label className="block text-sm font-medium mb-1">
-         Combien mesurez-vous en hauteur ?
-        </label>
-        <input
-          type="number"
-          value={height}
-          onChange={(e) => setHeight(e.target.value)}
-          className="w-full border rounded-lg px-3 py-2"
-        />
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium mb-1">
-         Taille
-        </label>
-        <input
-          type="number"
-          value={waist}
-          onChange={(e) => setWaist(e.target.value)}
-          className="w-full border rounded-lg px-3 py-2"
-        />
-      </div>
-
-      <div>
-        <label className="block text-sm font-medium mb-1">
-          Hanches
-        </label>
-        <input
-          type="number"
-          value={hips}
-          onChange={(e) => setHips(e.target.value)}
-          className="w-full border rounded-lg px-3 py-2"
-        />
-      </div>
-
-      <button
-        type="button"
-        onClick={calculateSize}
-        className="w-full bg-[#d71e3e] text-white py-2 rounded-lg"
-      >
-        Calculer ma taille
-      </button>
-
-      {size && (
-        <div className="bg-gray-100 p-4 rounded-lg text-center">
-          <p className="text-sm text-gray-500">Taille recommandée</p>
-          <p className="text-3xl font-bold">{size}</p>
-          <p className="text-3xl font-bold">Longueur({length})</p>
-
-            <p className="text-sm text-blue-500">Taille numérique approximative: {sizeNumber}</p>
-
-          {note && (
-            <p className="text-sm text-gray-600 mt-2">{note}</p>
-          )}
+    <div>
+      <form id="pantalons" className="space-y-5">
+        <div>
+          <label className="block text-sm font-medium mb-1">
+            Combien mesurez-vous en hauteur ?
+          </label>
+          <input
+            type="number"
+            value={height}
+            onChange={(e) => {
+              const cleanedValue = e.target.value.replace(/[.,]/g, "");
+              setHeight(cleanedValue);
+            }}
+            className="w-full border rounded-lg px-3 py-2"
+          />
         </div>
-      )}
 
-      <p className="text-red-500">{error}{alerte}</p>
+        <div>
+          <label className="block text-sm font-medium mb-1">Taille</label>
+          <input
+            type="number"
+            value={waist}
+            onChange={(e) => setWaist(e.target.value)}
+            className="w-full border rounded-lg px-3 py-2"
+          />
+        </div>
 
-    </form>
-     </div>
+        <div>
+          <label className="block text-sm font-medium mb-1">Hanches</label>
+          <input
+            type="number"
+            value={hips}
+            onChange={(e) => setHips(e.target.value)}
+            className="w-full border rounded-lg px-3 py-2"
+          />
+        </div>
+
+        <button
+          type="button"
+          onClick={calculateSize}
+          className="w-full bg-[#d71e3e] text-white py-2 rounded-lg"
+        >
+          Calculer ma taille
+        </button>
+
+        {size && (
+          <div className="bg-gray-100 p-4 rounded-lg text-center">
+            <p className="text-sm text-gray-500">Taille recommandée</p>
+            <p className="text-3xl font-bold">{size}</p>
+            <p className="text-3xl font-bold">Longueur({length})</p>
+
+            <p className="text-sm text-blue-500">
+              Taille numérique approximative: {sizeNumber}
+            </p>
+
+            {note && <p className="text-sm text-gray-600 mt-2">{note}</p>}
+          </div>
+        )}
+
+        <p className="text-red-500">
+          {error}
+          {alerte}
+        </p>
+      </form>
+    </div>
   );
 }

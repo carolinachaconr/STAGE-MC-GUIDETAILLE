@@ -55,7 +55,21 @@ export default function Chaussures() {
       result = { EUR: "41", US: "10", UK: "8" };
       setSizeNumber("10");
     }
-
+ else if (l >= 26.4 && l <= 27.0) {
+      result = { EUR: "42", US: "11", UK: "9" };
+      setSizeNumber("11");
+      
+    }
+     else if (l >= 27.1 && l <= 27.7) {
+      result = { EUR: "43", US: "12", UK: "10" };
+      setSizeNumber("12");
+      
+    }
+      else if (l >= 27.8 && l <= 28.3) {
+      result = { EUR: "44", US: "13", UK: "11" };
+      setSizeNumber("13");
+      
+    }
     else {
       setError("Aucune taille trouvée");
       return;
@@ -71,7 +85,13 @@ export default function Chaussures() {
   };
 
   return (
-    <form className="space-y-5">
+   <form
+  className="space-y-5"
+  onSubmit={(e) => {
+    e.preventDefault();
+    calculateSize();
+  }}
+>
 
       <div>
         <label className="block text-sm font-medium mb-1">
@@ -80,7 +100,7 @@ export default function Chaussures() {
 
         <input
           type="number"
-          step="0.1"
+          
           value={length}
           onChange={(e) => setLength(e.target.value)}
           className="w-full border rounded-lg px-3 py-2"

@@ -71,7 +71,7 @@ export default function TailleChaussures() {
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <h1 className="text-2xl font-bold mb-6 text-center">
-        Guide des tailles - Chaussures
+        Chaussures
       </h1>
 
       <div className="overflow-x-auto shadow-md rounded-lg">

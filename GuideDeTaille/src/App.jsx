@@ -17,7 +17,7 @@ export default function App() {
         onClick={() => setOpen(true)}
         className="bg-[#d71e3e] text-white px-4 py-2 rounded-xl"
       >
-        Ouvrir guide des tailles
+        Ouvrir le guide des tailles
       </button>
 
       <Modal

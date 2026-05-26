@@ -12,17 +12,41 @@ export default function SizeForm() {
 
       <nav className="flex flex-col md:flex-row gap-4 mb-6">
 
-        <button onClick={() => setSection("hauts")}>
+ {section === "hauts" ? (
+              <button className="text-red-500">
+                Hauts
+              </button>
+            ) : (
+              <button onClick={() => setSection("hauts")}>
+              Hauts
+              </button>
+            )}
+
+
+
+        {/* <button onClick={() => setSection("hauts")}>
           Hauts
-        </button>
+        </button> */}
 
-        <button onClick={() => setSection("pantalons")}>
-          Pantalons
-        </button>
+       {section === "pantalons" ? (
+              <button className="text-red-500">
+                Pantalons
+              </button>
+            ) : (
+              <button onClick={() => setSection("pantalons")}>
+              Pantalons
+              </button>
+            )}
 
-        <button onClick={() => setSection("chaussures")}>
-          Chaussures
-        </button>
+        {section === "chaussures" ? (
+              <button className="text-red-500">
+                Chaussures
+              </button>
+            ) : (
+              <button onClick={() => setSection("chaussures")}>
+                Chaussures
+              </button>
+            )}
 
       </nav>
 
