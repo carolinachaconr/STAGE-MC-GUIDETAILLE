@@ -15,9 +15,9 @@ export default function App() {
 
       <button
         onClick={() => setOpen(true)}
-        className="bg-[#d71e3e] text-white px-4 py-2 rounded-xl"
+        className="bg-[#d71e3e] text-white px-4 py-2 rounded-xl solidButton"
       >
-        Ouvrir le guide des tailles
+        Connaissez-vous votre taille ?
       </button>
 
       <Modal

@@ -107,7 +107,7 @@ export default function Hauts() {
       <button
         type="button"
         onClick={calculateSize}
-        className="w-full bg-[#d71e3e] text-white py-2 rounded-lg"
+        className="w-full bg-[#d71e3e] text-white py-2 rounded-lg solidButton"
       >
         Calculer ma taille
       </button>
