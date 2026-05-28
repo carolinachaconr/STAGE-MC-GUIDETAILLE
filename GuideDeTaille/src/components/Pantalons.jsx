@@ -10,17 +10,16 @@ export default function Pantalons() {
   const [error, setError] = useState("");
   const [alerte, setAlerte] = useState("");
   const [sizeNumber, setSizeNumber] = useState("");
+  const [length, setLength] = useState("");
 
   const calculateSize = () => {
     setAlerte("");
     setError("");
     setSize("");
     setNote("");
-    setSizeNumber("");
-    setHeight("");
-    setThigh("");
+    setLength("");
 
-    if (waist === "" || hips === "" || height === "") {
+    if (waist === "" || hips === "" || height === "" || thigh==="") {
       setAlerte("Veuillez remplir tous les champs");
       return;
     }
@@ -29,47 +28,47 @@ export default function Pantalons() {
     const h = Number(hips);
     const ht = Number(height);
     const t = Number(thigh);
-
     let result = "";
+    
 
     //  petite ou standard
     if (ht < 165) {
-      length = "Petite";
+      setLength("Petite");
     } else if (ht >= 165) {
-      length = "Standard";
+      setLength("Standard");
     }
     // *
 
-    if (w <= 28 && h <= 37) {
+    if (w <= 28 && h <= 37 && t<=20.75) {
       result = "S";
       setSizeNumber(3);
     }
     // S
-    else if (w <= 29 && h <= 38) {
+    else if (w <= 29 && h <= 38 && t<=21.5) {
       result = "S";
       setSizeNumber("5");
     }
     // M
-    else if (w <= 30 && h <= 39) {
+    else if (w <= 30 && h <= 39 && t<=22.25) {
       result = "S";
       setSizeNumber("7");
     }
     // L
-    else if (w <= 31 && h <= 40) {
+    else if (w <= 31 && h <= 40 && t<=23) {
       result = "M";
       setSizeNumber("9");
-    } else if (w <= 32.5 && h <= 41.5) {
+    } else if (w <= 32.5 && h <= 41.5 && t<=24) {
       result = "M";
       setSizeNumber("11");
-    } else if (w <= 34 && h <= 43) {
+    } else if (w <= 34 && h <= 43 && t<=25) {
       result = "L";
       setSizeNumber("13");
-    } else if (w <= 35.5 && h <= 44.5) {
+    } else if (w <= 35.5 && h <= 44.5 && t<=26) {
       result = "L";
       setSizeNumber("15");
     }
     // XL
-    else if (w <= 37 && h <= 46) {
+    else if (w <= 37 && h <= 46 && t<=27) {
       result = "XL";
       setSizeNumber(17);
     } else {
@@ -91,7 +90,7 @@ export default function Pantalons() {
       <form id="pantalons" className="space-y-5">
         <div>
           <label className="block text-sm font-medium mb-1">
-            Combien mesurez-vous en hauteur ?
+            Combien mesurez-vous ?
           </label>
           <input
             type="number"
@@ -120,6 +119,21 @@ export default function Pantalons() {
             type="number"
             value={hips}
             onChange={(e) => setHips(e.target.value)}
+            className="w-full border rounded-lg px-3 py-2"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">
+            Quelle est votre mensuration de cuisse?
+          </label>
+          <input
+            type="number"
+            value={thigh}
+            onChange={(e) => {
+              
+              setThigh(e.target.value);
+            }}
             className="w-full border rounded-lg px-3 py-2"
           />
         </div>
