@@ -116,7 +116,7 @@ if (unit === "cm") {
             step="0.1"
           value={waist}
           onChange={(e) => setWaist(e.target.value)}
-          className="w-full border rounded-lg px-3 py-2"
+          className="w-full border rounded-lg px-3 py-2" 
         />
       </div>
 
