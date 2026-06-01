@@ -2,6 +2,7 @@ import { useState } from "react";
 
 export default function Chaussures() {
 
+const [unit, setUnit] = useState("cm");
   const [length, setLength] = useState("");
   const [size, setSize] = useState(null);
   const [sizeNumber, setSizeNumber] = useState("");
@@ -22,7 +23,11 @@ export default function Chaussures() {
       return;
     }
 
-    const l = Number(length);
+   let l = Number(length);
+
+if (unit === "in") {
+  l = l * 2.54;
+}
 
     let result = null;
 
@@ -83,6 +88,7 @@ export default function Chaussures() {
       setNote("Taille recommandée selon le guide standard.");
     }
   };
+  
 
   return (
    <form
@@ -94,13 +100,34 @@ export default function Chaussures() {
 >
 
       <div>
-        <label className="block text-sm font-medium mb-1">
-          Longueur du pied (cm)
-        </label>
+        <div>
+  <label className="block text-sm font-medium mb-1">
+    Unité de mesure
+  </label>
 
-        <input
+ <select
+  value={unit}
+  onChange={(e) => {
+    setUnit(e.target.value);
+    setLength("");
+    setSize(null);
+    setError("");
+    setAlerte("");
+  }}
+  className="w-full border rounded-lg px-3 py-2"
+>
+  <option value="cm">Centimètres (cm)</option>
+  <option value="in">Pouces (po)</option>
+</select>
+
+
+</div>
+<label className="block text-sm font-medium mb-1 mt-4">
+  Longueur du pied ({unit === "cm" ? "cm" : "po"})
+</label>
+       <input
           type="number"
-          
+            step="0.1"
           value={length}
           onChange={(e) => setLength(e.target.value)}
           className="w-full border rounded-lg px-3 py-2"

@@ -1,7 +1,9 @@
 
 import { useState } from "react";
 
+
 export default function Hauts() {
+  const [unit, setUnit] = useState("cm");
   const [waist, setWaist] = useState("");
   const [hips, setHips] = useState("");
   const [size, setSize] = useState("");
@@ -23,8 +25,13 @@ export default function Hauts() {
       return;
     }
 
-    const w = Number(waist);
-    const h = Number(hips);
+let w = Number(waist);
+let h = Number(hips);
+
+if (unit === "cm") {
+  w = w / 2.54;
+  h = h / 2.54;
+}
 
     let result = "";
   
@@ -78,14 +85,35 @@ export default function Hauts() {
    
      
 
-    <form id="hauts" className="space-y-5">
+<form id="hauts" className="space-y-5">
+<div>
+  <label className="block text-sm font-medium mb-1">
+    Unité de mesure
+  </label>
 
+  <select
+    value={unit}
+    onChange={(e) => {
+      setUnit(e.target.value);
+      setWaist("");
+      setHips("");
+      setSize("");
+      setError("");
+      setAlerte("");
+    }}
+    className="w-full border rounded-lg px-3 py-2"
+  >
+    <option value="cm">Centimètres (cm)</option>
+    <option value="in">Pouces (po)</option>
+  </select>
+</div>
       <div>
         <label className="block text-sm font-medium mb-1">
-          Taille
-        </label>
+  Taille ({unit === "cm" ? "cm" : "po"})
+</label>
         <input
           type="number"
+            step="0.1"
           value={waist}
           onChange={(e) => setWaist(e.target.value)}
           className="w-full border rounded-lg px-3 py-2"
@@ -93,11 +121,12 @@ export default function Hauts() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-1">
-          Hanches
-        </label>
+       <label className="block text-sm font-medium mb-1">
+  Hanches ({unit === "cm" ? "cm" : "po"})
+</label>
         <input
           type="number"
+            step="0.1"
           value={hips}
           onChange={(e) => setHips(e.target.value)}
           className="w-full border rounded-lg px-3 py-2"
