@@ -13,7 +13,7 @@ export default function Modal({ isOpen, onClose, title, children }) {
     
       <div className="relative bg-white w-full max-w-md rounded-2xl shadow-xl p-6 z-10">
 
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center pb-2">
           {/* <h2 className="text-lg font-semibold text-center ">{title}</h2> */}
 
           <button onClick={onClose} className="text-gray-500 text-xl">

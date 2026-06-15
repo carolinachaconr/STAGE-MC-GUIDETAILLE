@@ -10,7 +10,7 @@ export default function App() {
 
 
   return (
-    <div className="p-10">
+    <div className="pt-5 pb-5">
     
 
       <button
