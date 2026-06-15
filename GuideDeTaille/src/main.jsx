@@ -17,6 +17,7 @@ import Guide from './Guide.jsx'
 createRoot(document.getElementById('react-product-page-root')).render(
   <StrictMode>
     <App />
+    <Guide />
   </StrictMode>,
 )
 

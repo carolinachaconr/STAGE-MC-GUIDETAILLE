@@ -14,3 +14,19 @@
     @apply transition duration-300 ease-in-out
    hover:bg-[#b01a30];
 }
+#react-product-page-root {
+  width: 100%;
+  margin-top: 10px;
+  
+    
+    top: -100px;
+    position: relative;
+    left: 15%;
+}
+
+#react-product-page-root > * {
+  width: 100%;
+}
+
+    
+   
