@@ -5,9 +5,19 @@ import './index.css'
 import App from './App.jsx'
 import Guide from './Guide.jsx'
 
-createRoot(document.getElementById('root')).render(
+// createRoot(document.getElementById('root')).render(
+//   <StrictMode>
+//     <App />
+//     <Guide />
+//   </StrictMode>,
+// )
+
+
+
+createRoot(document.getElementById('react-product-page-root')).render(
   <StrictMode>
     <App />
-    <Guide />
   </StrictMode>,
 )
+
+
